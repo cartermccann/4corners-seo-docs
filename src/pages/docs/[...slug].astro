@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import DocLayout from '../../layouts/DocLayout.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map((doc) => ({
+    params: { slug: doc.slug },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const { Content, headings } = await doc.render();
+
+// Extract title from first h1 heading or format from slug
+function formatTitle(slug: string): string {
+  return slug
+    .replace(/_/g, ' ')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+const title = doc.data.title
+  || headings.find(h => h.depth === 1)?.text
+  || formatTitle(doc.slug);
+---
+
+<DocLayout title={title}>
+  <Content />
+</DocLayout>

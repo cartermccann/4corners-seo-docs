@@ -1,0 +1,129 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  description?: string;
+}
+
+const { title, slug, description } = Astro.props;
+---
+
+<a href={`/docs/${slug}`} class="doc-card">
+  <div class="card-content">
+    <div class="card-header">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+        </svg>
+      </div>
+      <h2 class="card-title">{title}</h2>
+    </div>
+    {description && <p class="card-description">{description}</p>}
+    <div class="card-footer">
+      <span class="card-link">
+        Read documentation
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .doc-card {
+    display: block;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    overflow: hidden;
+  }
+
+  .doc-card:hover {
+    border-color: var(--color-border-hover);
+    background: var(--color-bg-elevated);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+  }
+
+  .card-content {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    min-height: 160px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .card-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+    transition: all var(--transition-fast);
+  }
+
+  .doc-card:hover .card-icon {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .card-description {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .card-footer {
+    margin-top: auto;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    transition: all var(--transition-fast);
+  }
+
+  .doc-card:hover .card-link {
+    color: var(--color-primary);
+  }
+
+  .card-link svg {
+    transition: transform var(--transition-fast);
+  }
+
+  .doc-card:hover .card-link svg {
+    transform: translateX(4px);
+  }
+</style>

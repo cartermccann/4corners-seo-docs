@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DocCard from '../components/DocCard.astro';
+
+const docs = await getCollection('docs');
+
+// Sort docs alphabetically by slug
+const sortedDocs = docs.sort((a, b) => a.slug.localeCompare(b.slug));
+
+// Helper to extract title from slug
+function formatTitle(slug: string): string {
+  return slug
+    .replace(/_/g, ' ')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+}
+---
+
+<BaseLayout title="Documentation">
+  <main class="main">
+    <div class="container">
+      <header class="hero">
+        <h1 class="page-title">Documentation</h1>
+        <p class="page-description">
+          Browse our collection of guides, proposals, and technical documentation.
+        </p>
+      </header>
+      <div class="doc-grid">
+        {sortedDocs.map((doc) => (
+          <DocCard
+            title={doc.data.title || formatTitle(doc.slug)}
+            slug={doc.slug}
+            description={doc.data.description}
+          />
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .main {
+    flex: 1;
+  }
+
+  .hero {
+    margin-bottom: var(--space-10);
+    animation: fadeIn var(--transition-slow) ease forwards;
+  }
+
+  .page-title {
+    margin-bottom: var(--space-3);
+  }
+
+  .page-description {
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    max-width: 500px;
+  }
+
+  @media (max-width: 640px) {
+    .page-description {
+      font-size: 1rem;
+    }
+  }
+</style>

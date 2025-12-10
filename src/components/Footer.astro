@@ -1,0 +1,96 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <a href="https://comcreate.org" target="_blank" rel="noopener" class="footer-logo-link">
+      <img src="/wide-logo.png" alt="Comcreate" class="footer-logo" />
+    </a>
+    <div class="footer-info">
+      <p class="footer-text">
+        <span class="footer-year">&copy; {year}</span>
+        <span class="footer-divider">&middot;</span>
+        <span class="footer-location">San Diego, CA</span>
+      </p>
+      <p class="footer-contact">
+        <a href="tel:+16199550105">(619) 955-0105</a>
+        <span class="footer-divider">&middot;</span>
+        <a href="mailto:sales@comcreate.org">sales@comcreate.org</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-8) var(--space-4);
+    margin-top: auto;
+  }
+
+  @media (min-width: 768px) {
+    .footer {
+      padding: var(--space-10) var(--space-8);
+    }
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .footer-logo-link {
+    transition: opacity var(--transition-fast);
+  }
+
+  .footer-logo-link:hover {
+    opacity: 0.8;
+  }
+
+  .footer-logo {
+    height: 28px;
+    width: auto;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .footer-text,
+  .footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    flex-wrap: wrap;
+  }
+
+  .footer-contact a {
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+  }
+
+  .footer-contact a:hover {
+    color: var(--color-primary);
+  }
+
+  .footer-divider {
+    color: var(--color-border);
+  }
+
+  @media (max-width: 640px) {
+    .footer-logo {
+      height: 24px;
+    }
+  }
+</style>

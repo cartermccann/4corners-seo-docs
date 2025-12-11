@@ -5,10 +5,10 @@
     "website": "4cornersconcretecoatings.com"
   },
   "overview": {
-    "performanceScore": 45,
-    "seoScore": 7,
-    "accessibilityScore": 72,
-    "bestPracticesScore": 65
+    "performanceScore": 85,
+    "seoScore": 100,
+    "accessibilityScore": 82,
+    "bestPracticesScore": 93
   },
   "keywords": {
     "total": 4,
@@ -50,53 +50,64 @@
     "newLinks": []
   },
   "issues": {
-    "total": 47,
-    "critical": 12,
-    "warnings": 20,
-    "notices": 15,
+    "total": 25,
+    "critical": 5,
+    "warnings": 8,
+    "notices": 12,
     "details": [
-      { "type": "critical", "issue": "Missing meta descriptions on all pages", "pages": 8 },
-      { "type": "critical", "issue": "No XML sitemap submitted", "pages": 1 },
-      { "type": "critical", "issue": "Missing schema markup", "pages": 8 },
-      { "type": "critical", "issue": "No robots.txt configured for AI crawlers", "pages": 1 },
-      { "type": "warning", "issue": "Images not optimized (no WebP)", "pages": 15 },
-      { "type": "warning", "issue": "Missing alt text on images", "pages": 12 },
+      { "type": "critical", "issue": "aria-hidden elements contain focusable descendants (Slick slider)", "pages": 14 },
+      { "type": "critical", "issue": "ARIA tab roles missing tablist parent", "pages": 5 },
+      { "type": "critical", "issue": "Links without discernible names (social icons)", "pages": 4 },
+      { "type": "critical", "issue": "Viewport disables user zoom (user-scalable=no)", "pages": 1 },
+      { "type": "critical", "issue": "Label/accessible name mismatch", "pages": 1 },
+      { "type": "warning", "issue": "Excessive DOM size (4,732 elements)", "pages": 1 },
+      { "type": "warning", "issue": "Font blocking text display (slick.woff)", "pages": 1 },
+      { "type": "warning", "issue": "Image aspect ratio mismatch", "pages": 1 },
+      { "type": "warning", "issue": "Cloudinary images cache TTL too short (30 days)", "pages": 26 },
+      { "type": "warning", "issue": "Missing location pages", "pages": 4 },
       { "type": "warning", "issue": "Thin content on service pages", "pages": 5 },
       { "type": "warning", "issue": "No internal linking strategy", "pages": 8 },
-      { "type": "warning", "issue": "Missing location pages", "pages": 4 }
+      { "type": "notice", "issue": "Consider preconnecting to Cloudinary CDN", "pages": 1 }
     ]
   },
   "coreWebVitals": {
     "lcp": {
-      "value": 3.8,
+      "value": null,
       "unit": "s",
-      "status": "fail",
-      "threshold": 2.5
+      "status": "error",
+      "threshold": 2.5,
+      "note": "NO_LCP error - needs investigation"
     },
     "inp": {
-      "value": 280,
+      "value": 100,
       "unit": "ms",
-      "status": "fail",
+      "status": "pass",
       "threshold": 200
     },
     "cls": {
-      "value": 0.18,
+      "value": 0,
       "unit": "",
-      "status": "fail",
+      "status": "pass",
       "threshold": 0.1
     },
     "fcp": {
-      "value": 2.4,
+      "value": 0.4,
       "unit": "s",
-      "status": "fail",
+      "status": "pass",
       "threshold": 1.8
     },
     "ttfb": {
-      "value": 1.2,
+      "value": 0.07,
       "unit": "s",
-      "status": "fail",
+      "status": "pass",
       "threshold": 0.8
-    }
+    },
+    "speedIndex": {
+      "value": 0.9,
+      "unit": "s",
+      "status": "pass",
+      "threshold": 3.4
+      
   },
   "competitors": {
     "avgPosition": 15,
@@ -112,5 +123,22 @@
     "changePercent": "0%",
     "rate": 0,
     "trend": [0, 0, 0, 0, 0, 0, 0]
+  },
+  "lighthouseAudit": {
+    "date": "2025-12-11",
+    "url": "https://www.4cornersconcretecoatings.com/home",
+    "version": "12.8.2",
+    "seoAudits": {
+      "metaDescription": true,
+      "documentTitle": true,
+      "linkText": true,
+      "crawlableAnchors": true,
+      "robotsTxt": true,
+      "canonical": true,
+      "hreflang": true,
+      "imageAlt": true,
+      "isCrawlable": true,
+      "httpStatusCode": true
+    }
   }
 }

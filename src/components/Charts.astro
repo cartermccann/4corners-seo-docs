@@ -21,12 +21,32 @@ const { traffic, keywords, coreWebVitals, overview } = metricsData;
       <div id="seo-gauge" class="chart-container" data-value={overview.seoScore}></div>
     </div>
 
-    <div class="chart-card span-2">
-      <div class="chart-header">
-        <span class="label-mono">Traffic Trend</span>
-        <span class="chart-value">{traffic.monthly.toLocaleString()}<span class="chart-unit"> visits/mo</span></span>
+    
+    
+  </div>
+
+  <!-- Keyword Rankings -->
+  <div class="keywords-section">
+    <div class="section-header">
+      <span class="label-mono-accent">Keyword Rankings</span>
+    </div>
+    <div class="keywords-table">
+      <div class="keywords-header">
+        <span>Keyword</span>
+        <span>Position</span>
+        <span>Volume</span>
+        <span>Change</span>
       </div>
-      <div id="traffic-chart" class="chart-container chart-tall" data-trend={JSON.stringify(traffic.trend)}></div>
+      {keywords.ranking.map((kw, i) => (
+        <div class="keyword-row" style={`animation-delay: ${300 + i * 80}ms`}>
+          <span class="keyword-name">{kw.keyword}</span>
+          <span class="keyword-position">{kw.position}</span>
+          <span class="keyword-volume">{kw.volume.toLocaleString()}</span>
+          <span class={`keyword-change ${kw.change > 0 ? 'positive' : kw.change < 0 ? 'negative' : 'neutral'}`}>
+            {kw.change > 0 ? '+' : ''}{kw.change}
+          </span>
+        </div>
+      ))}
     </div>
   </div>
 
@@ -407,6 +427,86 @@ const { traffic, keywords, coreWebVitals, overview } = metricsData;
     color: var(--color-text-muted);
   }
 
+  /* Keywords Section */
+  .keywords-section {
+    margin-top: var(--space-8);
+  }
+
+  .keywords-table {
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-deep);
+  }
+
+  .keywords-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .keyword-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+    opacity: 0;
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .keyword-row:last-child {
+    border-bottom: none;
+  }
+
+  .keyword-row:hover {
+    background: var(--color-bg);
+  }
+
+  .keyword-name {
+    font-size: 0.875rem;
+    color: var(--color-text);
+  }
+
+  .keyword-position {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .keyword-volume {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  .keyword-change {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .keyword-change.positive {
+    color: #22c55e;
+  }
+
+  .keyword-change.negative {
+    color: var(--color-error);
+  }
+
+  .keyword-change.neutral {
+    color: var(--color-text-muted);
+  }
+
   @media (max-width: 640px) {
     .chart-grid {
       grid-template-columns: 1fr;
@@ -418,6 +518,17 @@ const { traffic, keywords, coreWebVitals, overview } = metricsData;
 
     .vitals-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .keywords-header,
+    .keyword-row {
+      grid-template-columns: 1.5fr 1fr 1fr 0.8fr;
+      gap: var(--space-2);
+      font-size: 0.75rem;
+    }
+
+    .keyword-name {
+      font-size: 0.75rem;
     }
   }
 </style>

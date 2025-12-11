@@ -1,117 +1,116 @@
 {
   "client": {
-    "name": "Acme Corporation",
+    "name": "4Corners Concrete Coatings",
     "reportDate": "December 2025",
-    "website": "acmecorp.com"
+    "website": "4cornersconcretecoatings.com"
   },
   "overview": {
-    "performanceScore": 92,
-    "seoScore": 84,
-    "accessibilityScore": 89,
-    "bestPracticesScore": 96
+    "performanceScore": 45,
+    "seoScore": 7,
+    "accessibilityScore": 72,
+    "bestPracticesScore": 65
   },
   "keywords": {
-    "total": 247,
-    "change": 38,
-    "changePercent": "+18%",
-    "topPositions": 52,
-    "avgPosition": 8.3,
+    "total": 4,
+    "change": 0,
+    "changePercent": "0%",
+    "topPositions": 0,
+    "avgPosition": 85,
     "ranking": [
-      { "keyword": "enterprise software solutions", "position": 3, "change": 2, "volume": 12400 },
-      { "keyword": "cloud management platform", "position": 5, "change": -1, "volume": 8900 },
-      { "keyword": "business automation tools", "position": 7, "change": 4, "volume": 6200 },
-      { "keyword": "SaaS project management", "position": 4, "change": 0, "volume": 15800 },
-      { "keyword": "team collaboration software", "position": 9, "change": 3, "volume": 22100 }
+      { "keyword": "concrete coatings colorado", "position": 50, "change": 0, "volume": 40 },
+      { "keyword": "epoxy floor coating", "position": 75, "change": 0, "volume": 1900 },
+      { "keyword": "polyaspartic coatings", "position": 80, "change": 0, "volume": 170 },
+      { "keyword": "concrete coatings denver", "position": 90, "change": 0, "volume": 40 }
     ]
   },
   "traffic": {
-    "monthly": 48750,
-    "change": 8420,
-    "changePercent": "+21%",
-    "trend": [24300, 28100, 31500, 35200, 38900, 43100, 48750],
+    "monthly": 9,
+    "change": 0,
+    "changePercent": "0%",
+    "trend": [5, 7, 8, 6, 9, 8, 9],
     "sources": {
-      "organic": 62,
-      "direct": 18,
-      "referral": 12,
-      "social": 8
+      "organic": 30,
+      "direct": 50,
+      "referral": 15,
+      "social": 5
     },
     "topPages": [
-      { "page": "/products/enterprise", "views": 12400, "change": "+15%" },
-      { "page": "/solutions/automation", "views": 8900, "change": "+28%" },
-      { "page": "/pricing", "views": 7200, "change": "+12%" },
-      { "page": "/blog/industry-trends", "views": 5600, "change": "+45%" }
+      { "page": "/home", "views": 5, "change": "0%" },
+      { "page": "/services", "views": 2, "change": "0%" },
+      { "page": "/about", "views": 1, "change": "0%" },
+      { "page": "/contact", "views": 1, "change": "0%" }
     ]
   },
   "backlinks": {
-    "total": 1247,
-    "change": 156,
-    "changePercent": "+14%",
-    "domainAuthority": 58,
-    "referringDomains": 342,
-    "newLinks": [
-      { "domain": "techcrunch.com", "da": 94, "type": "dofollow" },
-      { "domain": "forbes.com", "da": 95, "type": "dofollow" },
-      { "domain": "venturebeat.com", "da": 91, "type": "dofollow" }
-    ]
+    "total": 1,
+    "change": 0,
+    "changePercent": "0%",
+    "domainAuthority": 7,
+    "referringDomains": 1,
+    "newLinks": []
   },
   "issues": {
-    "total": 12,
-    "critical": 2,
-    "warnings": 5,
-    "notices": 5,
+    "total": 47,
+    "critical": 12,
+    "warnings": 20,
+    "notices": 15,
     "details": [
-      { "type": "critical", "issue": "Missing meta descriptions on 3 pages", "pages": 3 },
-      { "type": "critical", "issue": "Broken internal links detected", "pages": 2 },
-      { "type": "warning", "issue": "Images missing alt text", "pages": 8 },
-      { "type": "warning", "issue": "Duplicate title tags", "pages": 4 },
-      { "type": "warning", "issue": "Low word count pages", "pages": 6 }
+      { "type": "critical", "issue": "Missing meta descriptions on all pages", "pages": 8 },
+      { "type": "critical", "issue": "No XML sitemap submitted", "pages": 1 },
+      { "type": "critical", "issue": "Missing schema markup", "pages": 8 },
+      { "type": "critical", "issue": "No robots.txt configured for AI crawlers", "pages": 1 },
+      { "type": "warning", "issue": "Images not optimized (no WebP)", "pages": 15 },
+      { "type": "warning", "issue": "Missing alt text on images", "pages": 12 },
+      { "type": "warning", "issue": "Thin content on service pages", "pages": 5 },
+      { "type": "warning", "issue": "No internal linking strategy", "pages": 8 },
+      { "type": "warning", "issue": "Missing location pages", "pages": 4 }
     ]
   },
   "coreWebVitals": {
     "lcp": {
-      "value": 1.8,
+      "value": 3.8,
       "unit": "s",
-      "status": "pass",
+      "status": "fail",
       "threshold": 2.5
     },
-    "fid": {
-      "value": 45,
+    "inp": {
+      "value": 280,
       "unit": "ms",
-      "status": "pass",
-      "threshold": 100
+      "status": "fail",
+      "threshold": 200
     },
     "cls": {
-      "value": 0.08,
+      "value": 0.18,
       "unit": "",
-      "status": "pass",
+      "status": "fail",
       "threshold": 0.1
     },
     "fcp": {
-      "value": 1.2,
+      "value": 2.4,
       "unit": "s",
-      "status": "pass",
+      "status": "fail",
       "threshold": 1.8
     },
     "ttfb": {
-      "value": 0.42,
+      "value": 1.2,
       "unit": "s",
-      "status": "pass",
+      "status": "fail",
       "threshold": 0.8
     }
   },
   "competitors": {
-    "avgPosition": 12.4,
+    "avgPosition": 15,
     "comparison": [
-      { "name": "Competitor A", "visibility": 78, "keywords": 312 },
-      { "name": "Competitor B", "visibility": 65, "keywords": 287 },
-      { "name": "Competitor C", "visibility": 52, "keywords": 198 }
+      { "name": "Denver CO Concrete Coatings", "visibility": 45, "keywords": 25 },
+      { "name": "Four Corners Concrete Inc", "visibility": 35, "keywords": 15 },
+      { "name": "Denver Concrete Stain", "visibility": 30, "keywords": 12 }
     ]
   },
   "conversions": {
-    "total": 892,
-    "change": 124,
-    "changePercent": "+16%",
-    "rate": 1.83,
-    "trend": [620, 685, 720, 758, 812, 856, 892]
+    "total": 0,
+    "change": 0,
+    "changePercent": "0%",
+    "rate": 0,
+    "trend": [0, 0, 0, 0, 0, 0, 0]
   }
 }

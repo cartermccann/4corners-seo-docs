@@ -17,14 +17,28 @@ function formatTitle(slug: string): string {
 }
 ---
 
-<BaseLayout title="Documentation">
+<BaseLayout title="SEO Reports">
   <main class="main">
     <div class="container">
       <header class="hero">
-        <h1 class="page-title">Documentation</h1>
-        <p class="page-description">
-          Browse our collection of guides, proposals, and technical documentation.
-        </p>
+        <div class="hero-content">
+          <div class="brand-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 16v-4"></path>
+              <path d="M12 8h.01"></path>
+            </svg>
+            Powered by Comcreate
+          </div>
+          <h1 class="page-title">SEO Reports</h1>
+          <div class="hero-divider"></div>
+          <p class="page-tagline">
+            Data-driven insights. Actionable strategies. Real results.
+          </p>
+          <p class="page-description">
+            Comprehensive SEO analysis and recommendations designed to ignite your digital growth.
+          </p>
+        </div>
       </header>
       <div class="doc-grid">
         {sortedDocs.map((doc) => (
@@ -45,23 +59,77 @@ function formatTitle(slug: string): string {
   }
 
   .hero {
-    margin-bottom: var(--space-10);
+    margin-bottom: var(--space-12);
     animation: fadeIn var(--transition-slow) ease forwards;
   }
 
+  .hero-content {
+    max-width: 720px;
+  }
+
+  .brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-8);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+
+  .brand-badge svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
   .page-title {
-    margin-bottom: var(--space-3);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: var(--space-6);
+    color: var(--color-text);
+    line-height: 1.1;
+  }
+
+  .hero-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--color-primary);
+    margin-bottom: var(--space-6);
+  }
+
+  .page-tagline {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+    line-height: 1.4;
   }
 
   .page-description {
     color: var(--color-text-secondary);
     font-size: 1.125rem;
-    max-width: 500px;
+    line-height: 1.6;
   }
 
   @media (max-width: 640px) {
+    .page-tagline {
+      font-size: 1.125rem;
+    }
+
     .page-description {
       font-size: 1rem;
+    }
+
+    .brand-badge {
+      font-size: 0.75rem;
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 3px;
     }
   }
 </style>
